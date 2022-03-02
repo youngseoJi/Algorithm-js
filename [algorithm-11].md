@@ -1,4 +1,4 @@
-## [Two Pointers Algorithm - 1]  두 배열 합치기 (sort(), 투 포인터 알고리즘)
+## [Algorithm/투포인터 알고리즘-1]  두 배열 합치기 (sort(), 투 포인터 알고리즘)
 
 ---
 

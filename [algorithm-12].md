@@ -1,4 +1,4 @@
-## [Two Pointers Algorithm-2]  공통원소구하기
+## [Algorithm/투포인터 알고리즘-2] 공통원소구하기
 
 ---
 

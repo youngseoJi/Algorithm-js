@@ -20,10 +20,6 @@
       => 행과 열번호 해당 인덱스 활용하기
       => 열번호 === moves 배열(뽑기 위치), 즉  board[행][열] 열번호(배열길이)이다. length-1해서 = 열번호 index로 배열 탐색가능
 
-### 선생님 풀이와 달랐던 점
-> 선생님은 while문을 사용하시지 않고, if문을 여러번 사용하시소 break문을 사용하셨다.
-> 돌아가는 방식은 동일
-
 ## 풀이
 1. 변수 stack 선언, 뽑은 인형을 순서대로 담을 바구니, 빈배열 [] 할당한다.
 2. 이중 for문) 5 * 5 board 2차원 배열을 조회하기 위해 이중 포문으로 숫자 요소(각 인형)를 조회한다.
@@ -74,4 +70,29 @@ function solution(board, moves) {
 
       let moves = [1, 5, 3, 5, 1, 2, 1, 4];
       console.log(solution(board, moves));
+```
+
+
+
+### 선생님 코드와 내 코드의 다른 점
+
+선생님은 이중for문과 while문을 사용하시지 않았다.
+forEach문으로 반복문이 한바퀴 돌때 고정되는 행번호를 조회하고, 열번호만 for문으로 조회했다. while문으로 추가적인 반복문을 사용하지 않고, if문으로 조건을 더 나누시고, break문을 사용하여 stack []에 인형 개수를 담은 후 현재 행의 조회를 멈추고, 다음 행으로 넘어가 해당 행의 열번호(요소)를 조회한다.
+```js
+moves.forEach(pos => {
+ for (let row = 0; i < board.length; i++) {
+    if (board[i][pos-1] !== 0) {
+      let tmp = board[i][pos-1];
+       board[i][pos-1] = 0;
+      if (tmp === stack[stack.length - 1]) {
+        stack.pop();
+        answer += 2;
+   	  }
+      	else stack.push(tmp)
+      	break;
+   		}
+ 	  }
+	});
+	return answer;
+}
 ```
